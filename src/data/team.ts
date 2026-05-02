@@ -19,7 +19,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
   {
     id: "reenu",
     name: "Reenu",
-    role: "Digital Alchmist",
+    role: "Digital Alchemist",
     image: "/team/reenu.png",
     skills: [
       "Web Developers",
