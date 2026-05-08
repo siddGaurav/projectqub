@@ -1,58 +1,51 @@
-const blogs = [
+import { Metadata } from "next";
 
-  {
+type Props = {
+  params: {
+    slug: string;
+  };
+};
+
+// SEO
+
+export async function generateMetadata(
+  { params }: Props
+): Promise<Metadata> {
+
+  return {
+
     title:
-    "Why Next.js is Best for SEO",
+      `${params.slug} | QUBNIX Blog`,
 
-    slug:
-    "nextjs-seo",
+    description:
+      "Read modern web development and SEO blogs from QUBNIX.",
+  };
+}
 
-    desc:
-    "Learn why Next.js helps websites rank better on Google.",
-  },
+export default function BlogDetails({
+  params,
+}: Props) {
 
-  {
-    title:
-    "React vs Next.js",
+  return (
 
-    slug:
-    "react-vs-nextjs",
+    <div className="px-6 py-20 max-w-4xl mx-auto">
 
-    desc:
-    "Understand the difference between React and Next.js.",
-  },
+      <h1 className="text-5xl font-bold capitalize">
 
-  {
-    title:
-    "Modern UI UX Design Trends",
+        {params.slug.replace(
+          /-/g,
+          " "
+        )}
 
-    slug:
-    "ui-ux-trends",
+      </h1>
 
-    desc:
-    "Explore modern interface and user experience trends.",
-  },
+      <p className="mt-6 text-lg opacity-80 leading-8">
 
-  {
-    title:
-    "Best SaaS Dashboard Design",
+        This is a dynamic blog page
+        for {params.slug}.
 
-    slug:
-    "saas-dashboard-design",
+      </p>
 
-    desc:
-    "Learn how premium SaaS dashboards are designed.",
-  },
-
-  {
-    title:
-    "Website Speed Optimization",
-
-    slug:
-    "website-speed-optimization",
-
-    desc:
-    "Improve website performance and Google ranking.",
-  },
-
-];
+    </div>
+  );
+}
