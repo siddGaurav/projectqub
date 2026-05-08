@@ -3,6 +3,7 @@ export interface ContactForm {
   name: string;
   email: string;
   message: string;
+  phone:string;
 }
 
 export const contactApi = async (formData: ContactForm) => {
