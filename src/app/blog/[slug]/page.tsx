@@ -30,13 +30,15 @@
 //   );
 // }
 
-export default function BlogPage({
+export default async function BlogPage({
   params,
 }: {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }) {
+
+  const { slug } = await params;
 
   return (
 
@@ -44,14 +46,14 @@ export default function BlogPage({
 
       <h1 className="text-5xl font-bold capitalize">
 
-        {params.slug.replace(/-/g, " ")}
+        {slug.replace(/-/g, " ")}
 
       </h1>
 
       <p className="mt-6 text-lg opacity-80 leading-8">
 
         This is a dynamic blog page
-        for {params.slug}.
+        for {slug}.
 
       </p>
 
