@@ -1,26 +1,87 @@
+import { Metadata } from "next";
+
 import { PageHero } from "@/components/PageHero";
 import { Process } from "@/components/Process";
 
+// SEO
+
+export const metadata: Metadata = {
+
+  title:
+    "Our Process | QUBNIX Digital Product Workflow",
+
+  description:
+    "Explore the QUBNIX process for building modern websites, SaaS platforms and scalable digital products through strategy, UI/UX design, development and launch.",
+
+  keywords: [
+    "QUBNIX process",
+    "website development workflow",
+    "SaaS product development",
+    "UI UX design process",
+    "Next.js development process",
+    "digital product strategy",
+    "modern web development",
+    "React development workflow",
+  ],
+
+  openGraph: {
+
+    title:
+      "Our Process | QUBNIX",
+
+    description:
+      "Discover how QUBNIX transforms ideas into premium digital experiences through strategy, design and scalable development.",
+
+    url:
+      "https://qubnix.com/process",
+
+    siteName: "QUBNIX",
+
+    images: [
+      {
+        url:
+          "https://qubnix.com/og-image.jpg",
+
+        width: 1200,
+        height: 630,
+
+        alt:
+          "QUBNIX Process",
+      },
+    ],
+
+    type: "website",
+  },
+};
+
 export default function ProcessPage() {
+
   return (
     <>
       <PageHero
         variant="slide-up"
+
         eyebrow="Method"
-        title="Our process"
-        subtitle="Our process is built to turn ideas into polished digital experiences without confusion or guesswork.
 
-Every step is planned with clarity—from the first conversation to the final launch.
+        title="Our Process"
 
-We move through strategy, design, development, and refinement as one connected flow.
+        subtitle="
+        Our process transforms
+        ideas into polished digital
+        experiences through
+        strategy, UI/UX design,
+        scalable development and
+        seamless launch execution.
 
-Nothing is rushed, nothing is hidden, and every detail is shaped with purpose.
-
-The result is a process that feels transparent, smooth, and built to keep momentum alive.
-
-By the time your project launches, every piece is already working together perfectly."
-
+        Every stage is transparent,
+        collaborative and focused
+        on delivering high-quality
+        websites and SaaS products
+        with speed, clarity and
+        precision.
+        "
       />
+
       <Process />
     </>
   );
