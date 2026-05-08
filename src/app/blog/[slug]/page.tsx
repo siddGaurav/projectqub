@@ -30,9 +30,13 @@
 //   );
 // }
 
-export default function Page({
+export default function BlogPage({
   params,
-}: any) {
+}: {
+  params: {
+    slug: string;
+  };
+}) {
 
   return (
 
@@ -40,9 +44,16 @@ export default function Page({
 
       <h1 className="text-5xl font-bold capitalize">
 
-        {params.slug}
+        {params.slug.replace(/-/g, " ")}
 
       </h1>
+
+      <p className="mt-6 text-lg opacity-80 leading-8">
+
+        This is a dynamic blog page
+        for {params.slug}.
+
+      </p>
 
     </div>
   );
