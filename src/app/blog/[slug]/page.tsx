@@ -1,30 +1,10 @@
-import { Metadata } from "next";
-
-type Props = {
+export default function BlogPage({
+  params,
+}: {
   params: {
     slug: string;
   };
-};
-
-// SEO
-
-export async function generateMetadata(
-  { params }: Props
-): Promise<Metadata> {
-
-  return {
-
-    title:
-      `${params.slug} | QUBNIX Blog`,
-
-    description:
-      "Read modern web development and SEO blogs from QUBNIX.",
-  };
-}
-
-export default function BlogDetails({
-  params,
-}: Props) {
+}) {
 
   return (
 
