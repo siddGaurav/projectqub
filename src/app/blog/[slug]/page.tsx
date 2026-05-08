@@ -30,6 +30,21 @@
 //   );
 // }
 
+export async function generateStaticParams() {
+
+  return [
+
+    {
+      slug: "nextjs-seo",
+    },
+
+    {
+      slug: "ui-ux-trends",
+    },
+
+  ];
+}
+
 export default async function BlogPage({
   params,
 }: {
