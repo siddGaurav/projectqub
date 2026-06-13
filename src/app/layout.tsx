@@ -1,31 +1,12 @@
+
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Syne } from "next/font/google";
-import {
-  GoogleAnalytics
-} from "@next/third-parties/google";
-
-import "./globals.css";
-
-
-import { AppProviders } from "@/components/providers/AppProviders";
-import { SiteChrome } from "@/components/shell/SiteChrome";
-
-const syne = Syne({
-  variable: "--font-syne",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const plusJakarta = Plus_Jakarta_Sans({
-  variable: "--font-plus-jakarta",
-  subsets: ["latin"],
-  display: "swap",
-});
-
 export const metadata: Metadata = {
+  metadataBase: new URL("https://qubnix.com"),
 
-  metadataBase:
-    new URL("https://qubnix.com"),
+
+    verification: {
+    google: "abc123xyz456",
+  },
 
   title: {
     default: "QUBNIX",
@@ -36,27 +17,16 @@ export const metadata: Metadata = {
     "QUBNIX is a modern digital product studio building high-performance websites, SaaS platforms, UI/UX systems and scalable web applications using Next.js and React.",
 
   keywords: [
-
     "QUBNIX",
-
     "website development",
-
     "Next.js agency",
-
     "React development",
-
     "SaaS development",
-
     "UI UX design",
-
     "frontend development",
-
     "backend development",
-
     "full stack development",
-
     "modern web applications",
-
     "digital product studio",
   ],
 
@@ -71,25 +41,19 @@ export const metadata: Metadata = {
   publisher: "QUBNIX",
 
   robots: {
-
     index: true,
     follow: true,
 
     googleBot: {
-
       index: true,
       follow: true,
-
       "max-video-preview": -1,
-
       "max-image-preview": "large",
-
       "max-snippet": -1,
     },
   },
 
   openGraph: {
-
     title: "QUBNIX",
 
     description:
@@ -102,10 +66,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/og-image.jpg",
-
         width: 1200,
         height: 630,
-
         alt: "QUBNIX",
       },
     ],
@@ -116,7 +78,6 @@ export const metadata: Metadata = {
   },
 
   twitter: {
-
     card: "summary_large_image",
 
     title: "QUBNIX",
@@ -128,57 +89,8 @@ export const metadata: Metadata = {
   },
 
   icons: {
-
     icon: "/favicon.ico",
-
     shortcut: "/favicon.ico",
-
     apple: "/favicon.ico",
   },
 };
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-
-  return (
-
-    <html
-      lang="en"
-      data-theme="dark-neon"
-      suppressHydrationWarning
-      className={`
-        ${syne.variable}
-        ${plusJakarta.variable}
-        h-full
-      `}
-    >
-
- <body
-  suppressHydrationWarning
-  className="
-  min-h-full
-  bg-background
-  text-foreground
-  "
->
-
-  <AppProviders>
-
-    <SiteChrome />
-
-    {children}
-
-  </AppProviders>
-
-  <GoogleAnalytics
-   gaId="G-3ZGF4CW5QT"
-  />
-
-</body>
-
-    </html>
-  );
-}
