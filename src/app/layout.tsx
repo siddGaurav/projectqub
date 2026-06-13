@@ -1,12 +1,7 @@
-
 import type { Metadata } from "next";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://qubnix.com"),
-
-
-    verification: {
-    google: "abc123xyz456",
-  },
 
   title: {
     default: "QUBNIX",
